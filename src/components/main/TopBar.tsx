@@ -1,6 +1,6 @@
 import { Box, Button, Snackbar, SnackbarContent } from "@mui/material";
-import { useFlowContext } from "../context/FlowCOntext";
-import { Edge, Node } from "reactflow";
+import { useFlowContext } from "../context/FlowContext";
+import { Edge } from "reactflow";
 import { useRef, useState } from "react";
 
 type SnackBar = {
@@ -20,10 +20,6 @@ export const TopBar = () => {
       connectedNodesIdsMap.add(edge.target);
       targetMap.add(edge.target);
     });
-    // const unConnectedNode = nodes.filter(
-    //   (node: Node) => !connectedNodesIdsMap.has(node.id)
-    // );
-    console.log(targetMap.size, nodes.length);
 
     if (targetMap.size >= nodes.length - 1) {
       setSnackBar({
@@ -38,8 +34,9 @@ export const TopBar = () => {
         type: "error",
       });
     }
-    // Clear nay previous setTimeOut
+    // Clear any previous setTimeOut
     clearInterval(timeoutRef.current);
+
     // Remove SnackBar after 2000ms.
     timeoutRef.current = setTimeout(() => {
       setSnackBar(null);

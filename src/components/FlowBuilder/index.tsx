@@ -12,29 +12,25 @@ import ReactFlow, {
   applyNodeChanges,
 } from "reactflow";
 import "reactflow/dist/style.css";
-import { customNodeType } from "./CustomNode";
+import customNodeType from "./custom";
 import { getUniqueId } from "../../utils";
-import { useFlowContext } from "../context/FlowCOntext";
+import { useFlowContext } from "../context/FlowContext";
 
 export const FLowBuilder = () => {
   const reactFlowWrapper = useRef<HTMLDivElement>(null);
 
   const [reactFlowInstance, setReactFlowInstance] = useState(null);
 
-  const {
-    nodes,
-    edges,
-    // selectedNode,
-    setEdges,
-    setNodes,
-    setSelectedNode,
-  } = useFlowContext();
+  const { nodes, edges, setEdges, setNodes, setSelectedNode } =
+    useFlowContext();
+
   const onNodeChange = useCallback(
     (changes: NodeChange[]) => {
       setNodes((nds: Node<any>[]) => applyNodeChanges(changes, nds));
     },
     [setNodes]
   );
+
   const onEdgesChange = useCallback(
     (changes: EdgeChange[]) => {
       setEdges((eds: Edge<any>[]) => applyEdgeChanges(changes, eds));
@@ -49,13 +45,13 @@ export const FLowBuilder = () => {
     [setEdges]
   );
 
+  // When new Message drag over the Flow
   const onDragOver = useCallback((event: any) => {
     event.preventDefault();
     event.dataTransfer.dropEffect = "move";
   }, []);
 
   const onElementClick = (_: any, node: { id: any }) => {
-    console.log(node);
     setSelectedNode(node.id);
   };
   const onDrop = useCallback(

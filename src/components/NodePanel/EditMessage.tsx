@@ -20,7 +20,8 @@ const EditMessage: FC<{
       </Stack>
       <TextareaAutosize
         style={{
-          width: "300px",
+          width: "100%",
+          minWidth: "200px",
           height: "150px",
           resize: "none",
           fontSize: "16px",

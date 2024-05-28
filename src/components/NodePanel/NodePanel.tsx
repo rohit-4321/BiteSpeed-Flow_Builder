@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import { useFlowContext } from "../context/FlowCOntext";
+import { useFlowContext } from "../context/FlowContext";
 import { MessageDraggableBox } from "./MessageDraggableBox";
 import { useCallback, useMemo, useRef } from "react";
 import EditMessage from "./EditMessage";
@@ -23,6 +23,7 @@ export const NodePanel = () => {
     selectedNodeIndex.current = null;
   }, [nodes, selectedNode]);
 
+  // On Back Press in Node Text Editing
   const onBackButtonClick = useCallback(() => {
     setSelectedNode(null);
   }, [setSelectedNode]);

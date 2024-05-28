@@ -3,7 +3,7 @@ import { Handle, Position } from "reactflow";
 import MessageIcon from "@mui/icons-material/Message";
 import { Box, Card, IconButton, Stack, Typography } from "@mui/material";
 
-const CustomNode: FC<{
+export const CustomMessageNode: FC<{
   data: {
     message: string;
   };
@@ -56,5 +56,3 @@ const CustomNode: FC<{
     </Card>
   );
 };
-
-export const customNodeType = { customNode: CustomNode };

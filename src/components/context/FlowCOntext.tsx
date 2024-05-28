@@ -10,13 +10,13 @@ const initialNodes: Node[] = [
     id: getUniqueId(),
     position: { x: 0, y: 0 },
     type: "customNode",
-    data: { message: "test message 1" },
+    data: { message: "Send Message 1" },
   },
   {
     id: getUniqueId(),
     position: { x: 100, y: 100 },
     type: "customNode",
-    data: { message: "test message 2" },
+    data: { message: "Send Message 2" },
   },
 ];
 
