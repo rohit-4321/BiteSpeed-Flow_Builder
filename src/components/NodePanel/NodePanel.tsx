@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import { useFlowContext } from "../context/FlowContext";
+import { useFlowContext } from "../context/BuilderFlowContext";
 import { MessageDraggableBox } from "./MessageDraggableBox";
 import { useCallback, useMemo, useRef } from "react";
 import EditMessage from "./EditMessage";

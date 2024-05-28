@@ -14,7 +14,7 @@ import ReactFlow, {
 import "reactflow/dist/style.css";
 import customNodeType from "./custom";
 import { getUniqueId } from "../../utils";
-import { useFlowContext } from "../context/FlowContext";
+import { useFlowContext } from "../context/BuilderFlowContext";
 
 export const FLowBuilder = () => {
   const reactFlowWrapper = useRef<HTMLDivElement>(null);
