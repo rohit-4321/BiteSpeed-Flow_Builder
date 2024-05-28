@@ -2,6 +2,7 @@ import { FC } from "react";
 import { Handle, Position } from "reactflow";
 import MessageIcon from "@mui/icons-material/Message";
 import { Box, Card, IconButton, Stack, Typography } from "@mui/material";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
 export const CustomMessageNode: FC<{
   data: {
@@ -23,7 +24,7 @@ export const CustomMessageNode: FC<{
           alignItems: "center",
         }}
       >
-        <Stack direction="row" alignItems="center" gap={1}>
+        <Stack direction="row" alignItems="center" gap={1} width="100%">
           <IconButton size="small">
             <MessageIcon sx={{ fontSize: "1.2rem" }} />
           </IconButton>
@@ -32,6 +33,9 @@ export const CustomMessageNode: FC<{
           >
             Send Message
           </Typography>
+          <Stack sx={{ flex: 1 }} direction="row" justifyContent="end">
+            <WhatsAppIcon color="success" />
+          </Stack>
         </Stack>
       </Box>
       <Handle
